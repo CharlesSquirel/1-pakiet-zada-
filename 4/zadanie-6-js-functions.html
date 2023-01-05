@@ -1,0 +1,458 @@
+<!--
+
+  Poziom kursu Frontend Developer: 1/4
+
+  Tym razem trening funkcji z argumentami.
+
+  Linki do nauki:
+  1. https://www.youtube.com/watch?v=ijKLO9sFvlA&ab_channel=Code2020 - przydatne do funkcji 8
+  2. https://bobbyhadz.com/blog/javascript-convert-array-to-set - przydatne do funkcji 8
+
+  Zadanie samodzielne: 
+  1. Wyboraź sobie, że jesteś developerem portalu z ogłoszeniami o pracę - No Fluff Jobs.
+  2. Twoim zadaniem jest napisanie funkcji, które pomogą wyszukać różne oferty, czyli np. funkcje filtrujące.
+  3. Tym razem zadanie jest trudniejsze niż poprzednio, ponieważ funkcje muszą być bardziej elestyczne i musisz użyć argumentów.
+  4. Twoja baza danych to tablica offersList.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const offersList = [
+        {
+          id: "5c3e3580-77c6-11ed-a1eb-0242ac1200021",
+          company_name: "Ready",
+          position: "frontend",
+          salary_from: 4500,
+          salary_to: 7000,
+          is_remote_possible: false,
+          company_city: "Warszawa",
+          skills: [
+            {
+              name: "JS",
+              level: "junior",
+              isMandatory: true,
+            },
+            {
+              name: "CSS",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "html",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "react",
+              level: "junior",
+              isMandatory: false,
+            },
+            {
+              name: "next",
+              level: "junior",
+              isMandatory: false,
+            },
+          ],
+        },
+        {
+          id: "5c3e388c-77c6-11ed-a1eb-0242ac1200022",
+          company_name: "Samsung",
+          position: "backend",
+          salary_from: 5500,
+          salary_to: 6500,
+          is_remote_possible: false,
+          company_city: "Kraków",
+          skills: [
+            {
+              name: "node",
+              level: "junior",
+              isMandatory: true,
+            },
+            {
+              name: "mysql",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "express",
+              level: "junior",
+              isMandatory: false,
+            },
+            {
+              name: "mongoDB",
+              level: "junior",
+              isMandatory: false,
+            },
+            {
+              name: "typeORM",
+              level: "junior",
+              isMandatory: false,
+            },
+          ],
+        },
+        {
+          id: "5c3e39d6-77c6-11ed-a1eb-0242ac1200023",
+          company_name: "Tivix",
+          position: "frontend",
+          salary_from: 7000,
+          salary_to: 10500,
+          is_remote_possible: true,
+          company_city: "Warszawa",
+          skills: [
+            {
+              name: "JS",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "CSS",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "html",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "react",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "gatsby",
+              level: "junior",
+              isMandatory: false,
+            },
+            {
+              name: "bootstrap",
+              level: "junior",
+              isMandatory: false,
+            },
+          ],
+        },
+        {
+          id: "5c3e3af8-77c6-11ed-a1eb-0242ac1200024",
+          company_name: "Atos",
+          position: "backend",
+          salary_from: 10000,
+          salary_to: 15000,
+          is_remote_possible: true,
+          company_city: "Kraków",
+          skills: [
+            {
+              name: "PHP",
+              level: "senior",
+              isMandatory: true,
+            },
+            {
+              name: "mysql",
+              level: "senior",
+              isMandatory: true,
+            },
+            {
+              name: "laravel",
+              level: "senior",
+              isMandatory: true,
+            },
+            {
+              name: "postgres",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "git",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "symfony",
+              level: "mid",
+              isMandatory: false,
+            },
+          ],
+        },
+        {
+          id: "5c3e3c10-77c6-11ed-a1eb-0242ac1200025",
+          company_name: "Divante",
+          position: "fullstack",
+          salary_from: 7000,
+          salary_to: 13000,
+          is_remote_possible: false,
+          company_city: "Poznań",
+          skills: [
+            {
+              name: "JS",
+              level: "junior",
+              isMandatory: true,
+            },
+            {
+              name: "CSS",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "html",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "react",
+              level: "junior",
+              isMandatory: false,
+            },
+            {
+              name: "next",
+              level: "junior",
+              isMandatory: false,
+            },
+          ],
+        },
+        {
+          id: "5c3e3c10-77c6-11ed-a1eb-0242ac1200026",
+          company_name: "Waynet",
+          position: "frontend",
+          salary_from: 12000,
+          salary_to: 16000,
+          is_remote_possible: false,
+          company_city: "Warszawa",
+          skills: [
+            {
+              name: "JS",
+              level: "senior",
+              isMandatory: true,
+            },
+            {
+              name: "CSS",
+              level: "senior",
+              isMandatory: true,
+            },
+            {
+              name: "html",
+              level: "senior",
+              isMandatory: true,
+            },
+            {
+              name: "react",
+              level: "senior",
+              isMandatory: true,
+            },
+            {
+              name: "angular",
+              level: "senior",
+              isMandatory: false,
+            },
+            {
+              name: "bootstrap",
+              level: "mid",
+              isMandatory: false,
+            },
+            {
+              name: "node",
+              level: "mid",
+              isMandatory: false,
+            },
+          ],
+        },
+        {
+          id: "5c3e3c10-77c6-11ed-a1eb-0242ac1200027",
+          company_name: "Statscore",
+          position: "fullstack",
+          salary_from: 12000,
+          salary_to: 17000,
+          is_remote_possible: true,
+          company_city: "Poznań",
+          skills: [
+            {
+              name: "JS",
+              level: "senior",
+              isMandatory: true,
+            },
+            {
+              name: "CSS",
+              level: "senior",
+              isMandatory: true,
+            },
+            {
+              name: "html",
+              level: "senior",
+              isMandatory: true,
+            },
+            {
+              name: "PHP",
+              level: "senior",
+              isMandatory: true,
+            },
+            {
+              name: "mysql",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "react",
+              level: "mid",
+              isMandatory: false,
+            },
+            {
+              name: "next",
+              level: "mid",
+              isMandatory: false,
+            },
+          ],
+        },
+        {
+          id: "5c3e3fd0-77c6-11ed-a1eb-0242ac1200028",
+          company_name: "Soft Blue",
+          position: "frontend",
+          salary_from: 3000,
+          salary_to: 5000,
+          is_remote_possible: false,
+          company_city: "Poznań",
+          skills: [
+            {
+              name: "JS",
+              level: "junior",
+              isMandatory: true,
+            },
+            {
+              name: "CSS",
+              level: "junior",
+              isMandatory: true,
+            },
+            {
+              name: "html",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "bootstrap",
+              level: "junior",
+              isMandatory: true,
+            },
+            {
+              name: "angular",
+              level: "junior",
+              isMandatory: false,
+            },
+          ],
+        },
+        {
+          id: "5c3e414c-77c6-11ed-a1eb-0242ac1200029",
+          company_name: "Flair Hub",
+          position: "backend",
+          salary_from: 6000,
+          salary_to: 8500,
+          is_remote_possible: false,
+          company_city: "Warszawa",
+          skills: [
+            {
+              name: "node",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "mysql",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "postgres",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "php",
+              level: "junior",
+              isMandatory: false,
+            },
+          ],
+        },
+        {
+          id: "5c3e4264-77c6-11ed-a1eb-0242ac12000211",
+          company_name: "Droplo",
+          position: "fullstack",
+          salary_from: 6000,
+          salary_to: 9000,
+          is_remote_possible: true,
+          company_city: "Kraków",
+          skills: [
+            {
+              name: "JS",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "CSS",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "html",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "react",
+              level: "junior",
+              isMandatory: true,
+            },
+            {
+              name: "PHP",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "postgres",
+              level: "mid",
+              isMandatory: true,
+            },
+            {
+              name: "mysql",
+              level: "junior",
+              isMandatory: false,
+            },
+          ],
+        },
+      ];
+
+      // Funkcja 1: Napisz funkcję, która zwróci oferty pracy zdalnej/stacjonarnej (argument 1) w zależności od przekazanego argumentu.
+      const findJob = (isRemotePossible) => {
+        let result = [];
+
+        if (isRemotePossible) {
+          result = offersList.filter((offer) => offer.is_remote_possible);
+        } else if (!isRemotePossible) {
+          result = offersList.filter((offer) => !offer.is_remote_possible);
+        }
+
+        return result;
+      };
+      console.log("Funkcja 1", findJob(true));
+      console.log("Funkcja 1", findJob(false));
+
+      // Czyli tym razem musimy stworzyć unwersalą funkcję, w której będziemy prekazywać odpowiednie argumenty.
+      // W Funkcji 1 argumentem jest "isRemotePossible", które możemu ustawić na true lub false.
+
+      // Funkcja 2: Napisz funkcję, która zwróci oferty pracy dla frontend dewelopera z uwzgędnieniem miasta firmy zatrudniającej (argument 1 - company_city). Czyli musimy tutaj dodać w argumencie string z miastem.
+
+      // Funkcja 3: Napisz funkcję, która zwróci oferty z możliwą pensją powyżej 7000 lub inną (argument 1) oraz wymaganą/niewymaganą (argument 2) technologią react.
+
+      // Funkcja 4: Napisz funkcję, która zwróci odpowiednio oferty z pensją wyższą niż 6000/8000/10000 (argument 1) dla backend/frontend (argument 2) dewelopera.
+
+      // Funkcja 5: Napisz funkcję, która zwróci odpowiednio średnią maksymalną pensję dla ofert pracy z podziałem na miasta: Kraków/Poznań/Warszawa (argument 1). Tutaj wystarczy dodać jeden argument.
+
+      // Funkcja 6: Napisz funkcję, która zwróci oferty dla backend/fullstack/frontend dewelopera (argument 1), gdzie wymagana jest technologia "mysql" lub inna (argument 2).
+
+      // Funkcja 7: Napisz funkcję, która zwróci wszystkie technologie wymienione w ofertach w Warszawie dla frontend dewelopera. W tym zadaniu nie podajemy argumentów. Technologie nie powinny się powtarzać. Możesz użyć "new Set" (zobacz linki do nauki) lub reduce.
+    </script>
+  </body>
+</html>
