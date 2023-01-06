@@ -5,8 +5,22 @@ body {
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  @media (max-width: 1023px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 1024px) {
     background: url(images/bg.jpg) no-repeat center center;
     background-size: cover;
   }
+}
+
+.card-container {
+  width: 638px;
+  height: 612px;
+  background-color: $white;
+  border-radius: 10px;
+  opacity: 0.85;
+  -webkit-box-shadow: 2px 4px 29px -4px rgba(154, 154, 167, 1);
+  -moz-box-shadow: 2px 4px 29px -4px rgba(154, 154, 167, 1);
+  box-shadow: 2px 4px 29px -4px rgba(154, 154, 167, 1);
 }

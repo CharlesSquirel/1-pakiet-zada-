@@ -1,12 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: url(images/bg.jpg) no-repeat 70% 70%;
   background-size: cover;
   height: 100vh;
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   body {
     background: url(images/bg.jpg) no-repeat center center;
     background-size: cover;
   }
+}
+
+.card-container {
+  width: 638px;
+  height: 612px;
+  background-color: #fff;
+  border-radius: 10px;
+  opacity: 0.85;
+  -webkit-box-shadow: 2px 4px 29px -4px rgb(154, 154, 167);
+  -moz-box-shadow: 2px 4px 29px -4px rgb(154, 154, 167);
+  box-shadow: 2px 4px 29px -4px rgb(154, 154, 167);
 }/*# sourceMappingURL=style.css.map */
