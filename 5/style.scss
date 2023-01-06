@@ -35,6 +35,7 @@ body {
     z-index: -1;
     width: 255px;
     opacity: 0.9;
+    transition: all 0.3s ease-in-out;
     @media (max-width: 1024px) {
       width: 130px;
     }
@@ -92,11 +93,18 @@ body {
   height: 100%;
   padding: 160px 100px 100px 100px;
   gap: 50px;
+  transition: all 0.3s ease-in-out;
 
   @media (max-width: 1024px) {
     padding: 150px 38px 38px 38px;
     gap: 30px;
   }
+}
+
+.create-form {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .personal-form {
