@@ -24,10 +24,21 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
   width: 100%;
-  div:first-of-type {
-    border-top-left-radius: 10px;
+
+  .progress {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
     background-color: $btn-bg;
-    width: 120%;
+    z-index: -1;
+    width: 255px;
+    opacity: 0.9;
+    @media (max-width: 1024px) {
+      width: 130px;
+    }
+
     &::after {
       content: "";
       display: block;
@@ -38,7 +49,15 @@ body {
       height: 38px;
       background-color: $btn-bg;
       rotate: 45deg;
+      @media (max-width: 1024px) {
+        left: 110px;
+      }
     }
+  }
+
+  .step1 {
+    border-top-left-radius: 10px;
+    width: 120%;
   }
   div:last-of-type {
     border-top-right-radius: 10px;
@@ -82,7 +101,7 @@ body {
 
 .personal-form {
   position: absolute;
-  left: -580px;
+  left: 1160px;
   top: 0;
 }
 
