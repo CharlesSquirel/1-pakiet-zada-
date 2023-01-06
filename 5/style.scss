@@ -26,7 +26,6 @@ body {
   width: 100%;
 
   .progress {
-    width: 200px;
     height: 50px;
     position: absolute;
     top: 0;
@@ -50,6 +49,7 @@ body {
       height: 38px;
       background-color: $btn-bg;
       rotate: 45deg;
+      transition: all 0.3s ease-in-out;
       @media (max-width: 1024px) {
         left: 110px;
       }
