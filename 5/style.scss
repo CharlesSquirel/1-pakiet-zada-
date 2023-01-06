@@ -16,6 +16,38 @@ body {
   }
 }
 
+.step-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  width: 100%;
+  div:first-of-type {
+    border-top-left-radius: 10px;
+    background-color: $btn-bg;
+    width: 120%;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 6px;
+      left: 234px;
+      width: 38px;
+      height: 38px;
+      background-color: $btn-bg;
+      rotate: 45deg;
+    }
+  }
+  div:last-of-type {
+    border-top-right-radius: 10px;
+  }
+  .step {
+    padding: 15px;
+  }
+}
+
 .card-container {
   width: 638px;
   height: 612px;
@@ -83,11 +115,11 @@ body {
 .btn {
   font-size: 20px;
   font-family: "Merriweather", serif;
-  background-color: rgb(93 179 93);
+  background-color: $btn-bg;
   border-radius: 20px;
   padding: 8px 37px;
   font-weight: 600;
-  color: rgb(39, 39, 39);
+  color: $btn-text;
   &:hover {
     opacity: 0.9;
   }
