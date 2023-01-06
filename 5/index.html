@@ -26,10 +26,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="card-container"></main>
+    <main class="card-container">
+      <!-- CREATE -->
+      <form class="create-form">
+        <h1>CREATE ACCOUNT</h1>
+        <div class="inputs-container">
+          <input class="input" type="email" placeholder="Email" required />
+          <input class="input" type="password" placeholder="Password" required />
+          <input class="input" type="password" placeholder="Confirm Password" required />
+        </div>
+        <button class="btn" role="submit">Next</button>
+      </form>
+      <!-- PERSONAL -->
+      <form class="personal-form">
+        <h1>PERSONAL INFO</h1>
+        <div class="inputs-container">
+          <input class="input" type="text" placeholder="First Name" required />
+          <input class="input" type="text" placeholder="Last Name" required />
+          <input class="input" type="tel" placeholder="Mobile No." maxlength="9" minlength="9" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required />
+        </div>
+        <div class="btns-container">
+          <button class="btn">Back</button>
+          <button class="btn" role="submit">Submit</button>
+        </div>
+      </form>
+      <!-- SOCIAL LINKS -->
+      <form class="social-form">
+        <h1>SOCIAL LINKS</h1>
+        <div class="inputs-container">
+          <input class="input" type="url" placeholder="Medium" />
+          <input class="input" type="url" placeholder="Github" />
+          <input class="input" type="url" placeholder="Linkedin" pattern="https://.*" />
+        </div>
+        <div class="btns-container">
+          <button class="btn">Back</button>
+          <button class="btn">Next</button>
+        </div>
+      </form>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+input,
+button {
+  border: none;
+  cursor: pointer;
+}
+
 body {
   background: url(images/bg.jpg) no-repeat 70% 70%;
   background-size: cover;
@@ -12,6 +18,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
 }
 @media (max-width: 1024px) {
   body {
@@ -25,8 +33,84 @@ body {
   height: 612px;
   background-color: #fff;
   border-radius: 10px;
-  opacity: 0.85;
+  opacity: 0.95;
   -webkit-box-shadow: 2px 4px 29px -4px rgb(154, 154, 167);
   -moz-box-shadow: 2px 4px 29px -4px rgb(154, 154, 167);
   box-shadow: 2px 4px 29px -4px rgb(154, 154, 167);
+  position: relative;
+}
+@media (max-width: 1024px) {
+  .card-container {
+    height: 536px;
+  }
+}
+
+.create-form,
+.personal-form,
+.social-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 160px 100px 100px 100px;
+  gap: 50px;
+}
+@media (max-width: 1024px) {
+  .create-form,
+.personal-form,
+.social-form {
+    padding: 150px 38px 38px 38px;
+    gap: 30px;
+  }
+}
+
+.personal-form {
+  position: absolute;
+  left: -580px;
+  top: 0;
+}
+
+.social-form {
+  position: absolute;
+  left: 580px;
+  top: 0;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+.input {
+  border-bottom: 1px solid #000;
+  height: 40px;
+  font-size: 20px;
+  font-family: "Merriweather", serif;
+}
+.input:hover {
+  opacity: 0.9;
+}
+.input:focus-visible {
+  outline: none;
+}
+
+.btn {
+  font-size: 20px;
+  font-family: "Merriweather", serif;
+  background-color: rgb(93, 179, 93);
+  border-radius: 20px;
+  padding: 8px 37px;
+  font-weight: 600;
+  color: rgb(39, 39, 39);
+}
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btns-container {
+  display: flex;
+  gap: 15px;
 }/*# sourceMappingURL=style.css.map */
