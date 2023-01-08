@@ -3,3 +3,14 @@
   margin: 0;
   padding: 0;
 }
+
+input,
+button {
+  border: none;
+  cursor: pointer;
+}
+
+$main-gradient: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(12, 115, 177, 1) 35%, rgba(230, 0, 255, 1) 100%);
+$white: #fff;
+$black: #000;
+$main: rgb(2, 194, 233);
