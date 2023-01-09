@@ -47,32 +47,19 @@ body {
   width: 255px;
   opacity: 0.9;
   transition: all 0.3s ease-in-out;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
 }
 @media (max-width: 1024px) {
   .step-container .progress {
     width: 130px;
   }
 }
-.step-container .progress::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 6px;
-  left: 234px;
-  width: 38px;
-  height: 38px;
-  background-color: rgb(93, 179, 93);
-  rotate: 45deg;
-  transition: all 0.3s ease-in-out;
-}
-@media (max-width: 1024px) {
-  .step-container .progress::after {
-    left: 110px;
-  }
-}
 .step-container .step1 {
+  transition: all 0.3s ease-in-out;
   border-top-left-radius: 10px;
   width: 120%;
+  font-weight: 600;
 }
 .step-container div:last-of-type {
   border-top-right-radius: 10px;

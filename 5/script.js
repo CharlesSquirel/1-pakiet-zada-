@@ -4,9 +4,10 @@ const backPersonalButton = document.querySelector(".personal-back-btn");
 const submitPersonalButton = document.querySelector(".personal-submit-btn");
 const backSocialButton = document.querySelector(".social-back-btn");
 const nextSocialButton = document.querySelector(".social-next-btn");
+const stepText2 = document.querySelector(".step2");
+const stepText3 = document.querySelector(".step3");
 // PROGRESS
 const progressBar = document.querySelector(".progress");
-const progressArrow = document.querySelector(".progress::after");
 // FORMS
 const createForm = document.querySelector(".create-form");
 const personalForm = document.querySelector(".personal-form");
@@ -18,7 +19,7 @@ nextCreateButton.addEventListener("click", () => {
     socialForm.style.left = "0";
     personalForm.style.left = "580px"
     progressBar.style.width = "475px";
-    progressArrow.style.left = "456px";
+    stepText2.style.fontWeight = "600";
 })
 
 // BACK PERSONAL BUTTON EVENT
@@ -27,5 +28,13 @@ backPersonalButton.addEventListener("click", (e) => {
     socialForm.style.left = "580px";
     personalForm.style.left = "1160px"
     progressBar.style.width = "255px";
-    progressArrow.style.left = "234px";
+})
+
+// NEXT SOCIAL BUTTON EVENT
+nextSocialButton.addEventListener("click", () => {
+    createForm.style.left = "-1160px";
+    socialForm.style.left = "-580px";
+    personalForm.style.left = "0"
+    progressBar.style.width = "650px";
+    stepText3.style.fontWeight = "600";
 })
