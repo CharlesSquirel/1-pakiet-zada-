@@ -451,20 +451,14 @@
       console.log("Funkcja 2", findJobByCity("Warszawa"));
 
       // Funkcja 3: Napisz funkcję, która zwróci oferty z możliwą pensją powyżej 7000 lub inną (argument 1) oraz wymaganą/niewymaganą (argument 2) technologią react.
-      //       const findJobBySalary = (salary, reactIsMandatory) => {
-      //         let result = offersList.filter((e) => salary > e.salary_from && salary < e.salary_to && 7000 > e.salary_from && 7000 < e.salary_to);
-      //         let resultSkills = result.map(e => e.skills);
-      //         let arr = [];
-      // for (let i = 0; i < result.length; i++) {
-      //   for (const value of result[i].skills) {
-      //     if (Object.values(result[i].skills.name).indexOf("react") > -1) {arr.push(result[i])}
-      //   }
-      // }
+            const findJobBySalary = (salary, reactIsMandatory) => {
+              let result = offersList.filter((e) => salary > e.salary_from && salary < e.salary_to && 7000 > e.salary_from && 7000 < e.salary_to && e.skills.some(e => e.name === "react" && e.isMandatory === reactIsMandatory));
 
-      //         return result;
-      //       };
-      //       console.log("Funkcja 3", findJobBySalary(6500, true));
-      //       console.log("Funkcja 3", findJobBySalary(7500, false));
+
+              return result;
+            };
+            console.log("Funkcja 3", findJobBySalary(6500, true));
+            console.log("Funkcja 3", findJobBySalary(7500, false));
 
       // Funkcja 4: Napisz funkcję, która zwróci odpowiednio oferty z pensją wyższą niż 6000/8000/10000 (argument 1) dla backend/frontend (argument 2) dewelopera.
       const findOffertBy = (salary, pos) => {
