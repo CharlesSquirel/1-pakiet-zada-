@@ -488,13 +488,14 @@
       console.log("Funkcja 5", findAverageSalaryByCity("Poznań"));
 
       // Funkcja 6: Napisz funkcję, która zwróci oferty dla backend/fullstack/frontend dewelopera (argument 1), gdzie wymagana jest technologia "mysql" lub inna (argument 2).
-      // const findByOffertsAndTech = (pos, tech) => {
-      //   return result;
-      // };
+      const findByOffertsAndTech = (pos, tech) => {
+        let result = offersList.filter(e => e.position === pos && e.skills.filter(e => e.name === "mysql" && e.isMandatory === true || e.name === tech && e.isMandatory === true))
+        return result;
+      };
 
-      // console.log("Funkcja 6", findByOffertsAndTech("backend", "PHP"));
-      // console.log("Funkcja 6", findByOffertsAndTech("fullstact", "postgress"));
-      // console.log("Funkcja 6", findByOffertsAndTech("frontend", "html"));
+      console.log("Funkcja 6", findByOffertsAndTech("backend", "PHP"));
+      console.log("Funkcja 6", findByOffertsAndTech("fullstact", "postgress"));
+      console.log("Funkcja 6", findByOffertsAndTech("frontend", "html"));
 
       // Funkcja 7: Napisz funkcję, która zwróci wszystkie technologie wymienione w ofertach w Warszawie dla frontend dewelopera. W tym zadaniu nie podajemy argumentów. Technologie nie powinny się powtarzać. Możesz użyć "new Set" (zobacz linki do nauki) lub reduce.
       const findByOfferts = () => {
