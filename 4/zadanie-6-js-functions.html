@@ -451,16 +451,28 @@
       console.log("Funkcja 2", findJobByCity("Warszawa"));
 
       // Funkcja 3: Napisz funkcję, która zwróci oferty z możliwą pensją powyżej 7000 lub inną (argument 1) oraz wymaganą/niewymaganą (argument 2) technologią react.
-      // const findJobBySalary = (salary, reactIsMandatory) => {
-      //   let result = offersList.filter((e) => salary > e.salary_from && salary < e.salary_to && 7000 > e.salary_from && 7000 < e.salary_to);
-      //   result = result.map((e) => e.skills);
-      //   // .filter((e) => e.name === "react");
-      //   return result;
-      // };
-      // console.log("Funkcja 3", findJobBySalary(6500, true));
-      // console.log("Funkcja 3", findJobBySalary(7500, false));
+      //       const findJobBySalary = (salary, reactIsMandatory) => {
+      //         let result = offersList.filter((e) => salary > e.salary_from && salary < e.salary_to && 7000 > e.salary_from && 7000 < e.salary_to);
+      //         let resultSkills = result.map(e => e.skills);
+      //         let arr = [];
+      // for (let i = 0; i < result.length; i++) {
+      //   for (const value of result[i].skills) {
+      //     if (Object.values(result[i].skills.name).indexOf("react") > -1) {arr.push(result[i])}
+      //   }
+      // }
+
+      //         return result;
+      //       };
+      //       console.log("Funkcja 3", findJobBySalary(6500, true));
+      //       console.log("Funkcja 3", findJobBySalary(7500, false));
 
       // Funkcja 4: Napisz funkcję, która zwróci odpowiednio oferty z pensją wyższą niż 6000/8000/10000 (argument 1) dla backend/frontend (argument 2) dewelopera.
+      const findOffertBy = (salary, pos) => {
+        let result = offersList.filter((e) => e.salary_to > salary && e.position === pos);
+        return result;
+      };
+      console.log("Funkcja 4", findOffertBy(6000, "backend"));
+      console.log("Funkcja 4", findOffertBy(8000, "frontend"));
 
       // Funkcja 5: Napisz funkcję, która zwróci odpowiednio średnią maksymalną pensję dla ofert pracy z podziałem na miasta: Kraków/Poznań/Warszawa (argument 1). Tutaj wystarczy dodać jeden argument.
       const findAverageSalaryByCity = (city) => {
@@ -487,7 +499,9 @@
       // Funkcja 7: Napisz funkcję, która zwróci wszystkie technologie wymienione w ofertach w Warszawie dla frontend dewelopera. W tym zadaniu nie podajemy argumentów. Technologie nie powinny się powtarzać. Możesz użyć "new Set" (zobacz linki do nauki) lub reduce.
       const findByOfferts = () => {
         let result = offersList
-          .filter((e) => e.company_city === "Warszawa" && e.position === "frontend")
+          .filter(
+            (e) => e.company_city === "Warszawa" && e.position === "frontend"
+          )
           .map((e) => e.skills.map((e) => e.name))
           .map((e) => new Set(e));
         return result;
