@@ -74,10 +74,9 @@ body {
   background-color: #fff;
   border-radius: 10px;
   opacity: 0.95;
-  -webkit-box-shadow: 2px 4px 29px -4px rgb(154, 154, 167);
-  -moz-box-shadow: 2px 4px 29px -4px rgb(154, 154, 167);
   box-shadow: 2px 4px 29px -4px rgb(154, 154, 167);
   position: relative;
+  overflow: hidden;
 }
 @media (max-width: 1024px) {
   .card-container {

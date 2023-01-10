@@ -12,23 +12,26 @@ const progressBar = document.querySelector(".progress");
 const createForm = document.querySelector(".create-form");
 const personalForm = document.querySelector(".personal-form");
 const socialForm = document.querySelector(".social-form");
+// BUTTON GROUP OF THE SAME EVENT
+const buttonGroup = [].concat(nextCreateButton, backPersonalButton);
 
-// NEXT CREATE BUTTON EVENT
-nextCreateButton.addEventListener("click", () => {
+// // NEXT CREATE BUTTON EVENT && BACK PERSONAL BUTTON EVENT
+buttonGroup.forEach(button => button.addEventListener("click", () => {
     createForm.style.left = "-580px";
     socialForm.style.left = "0";
     personalForm.style.left = "580px"
     progressBar.style.width = "475px";
     stepText2.style.fontWeight = "600";
-})
+}));
 
-// BACK PERSONAL BUTTON EVENT
-backPersonalButton.addEventListener("click", (e) => {
+
+// BACK SOCIAL BUTTON EVENT
+backSocialButton.addEventListener("click", (e) => {
     createForm.style.left = "0";
     socialForm.style.left = "580px";
     personalForm.style.left = "1160px"
     progressBar.style.width = "255px";
-})
+});
 
 // NEXT SOCIAL BUTTON EVENT
 nextSocialButton.addEventListener("click", () => {
@@ -37,4 +40,4 @@ nextSocialButton.addEventListener("click", () => {
     personalForm.style.left = "0"
     progressBar.style.width = "650px";
     stepText3.style.fontWeight = "600";
-})
+});

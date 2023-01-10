@@ -66,6 +66,7 @@ body {
   -moz-box-shadow: 2px 4px 29px -4px rgba(154, 154, 167, 1);
   box-shadow: 2px 4px 29px -4px rgba(154, 154, 167, 1);
   position: relative;
+  overflow: hidden;
   @media (max-width: 1024px) {
     height: 536px;
   }
