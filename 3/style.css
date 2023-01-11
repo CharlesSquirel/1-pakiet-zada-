@@ -1,1 +1,110 @@
-/*# sourceMappingURL=style.css.map */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-top-mobile {
+  width: 100%;
+  position: absolute;
+  left: -400px;
+  top: 0;
+  background: #fff;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 24px 0px rgb(165, 165, 182);
+  -moz-box-shadow: 0px 0px 24px 0px rgb(165, 165, 182);
+  box-shadow: 0px 0px 24px 0px rgb(165, 165, 182);
+  transition: all 0.2s ease-in-out;
+}
+.nav-top-mobile__links {
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px 0;
+  gap: 5px;
+}
+.nav-top-mobile__link {
+  color: #000;
+  font-size: 20px;
+  pointer-events: none;
+}
+
+.close-btn {
+  color: #000;
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 28px;
+}
+
+body {
+  background: linear-gradient(0deg, rgb(255, 246, 247) 0%, rgb(254, 218, 220) 50%) no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.card-container {
+  background: #fff;
+  width: 80%;
+  height: 50%;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 0px 24px 0px rgb(165, 165, 182);
+  -moz-box-shadow: 0px 0px 24px 0px rgb(165, 165, 182);
+  box-shadow: 0px 0px 24px 0px rgb(165, 165, 182);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15%;
+  color: #fff;
+  background: #000;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding: 40px;
+  position: relative;
+}
+.card-header__text {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+@media (max-width: 1080px) {
+  .nav-top {
+    display: none;
+  }
+}
+.nav-top__links {
+  display: flex;
+  gap: 50px;
+}
+.nav-top__link {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.hamburger {
+  display: none;
+}
+@media (max-width: 687px) {
+  .hamburger {
+    display: block;
+    font-size: 30px;
+  }
+}/*# sourceMappingURL=style.css.map */
