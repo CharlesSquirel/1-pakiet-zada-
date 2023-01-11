@@ -16,14 +16,14 @@ a {
 .nav-top-mobile {
   width: 100%;
   position: absolute;
-  left: -400px;
+  left: -2400px;
   top: 0;
   background: #fff;
   border-radius: 20px;
   -webkit-box-shadow: 0px 0px 24px 0px rgb(165, 165, 182);
   -moz-box-shadow: 0px 0px 24px 0px rgb(165, 165, 182);
   box-shadow: 0px 0px 24px 0px rgb(165, 165, 182);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 .nav-top-mobile__links {
   border-radius: 30px;
@@ -102,7 +102,7 @@ body {
 .hamburger {
   display: none;
 }
-@media (max-width: 687px) {
+@media (max-width: 1080px) {
   .hamburger {
     display: block;
     font-size: 30px;

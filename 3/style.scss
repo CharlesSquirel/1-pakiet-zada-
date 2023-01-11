@@ -54,7 +54,7 @@ body {
 
 .hamburger {
   display: none;
-  @media (max-width: 687px) {
+  @media (max-width: 1080px) {
     display: block;
     font-size: 30px;
   }

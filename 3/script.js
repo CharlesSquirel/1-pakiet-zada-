@@ -9,5 +9,5 @@ hamburger.addEventListener("click", () => {
 });
 
 closeBtn.addEventListener("click", () => {
-  navMobile.style.left = "-400px";
+  navMobile.style.left = "-2400px";
 });
