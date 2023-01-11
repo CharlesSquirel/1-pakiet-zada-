@@ -21,7 +21,7 @@ body {
   font-family: "Merriweather", serif;
   font-weight: 400;
 }
-@media (max-width: 1024px) {
+@media (max-width: 687px) {
   body {
     background: url(images/bg.jpg) no-repeat center center;
     background-size: cover;
@@ -50,7 +50,7 @@ body {
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 687px) {
   .step-container .progress {
     width: 130px;
   }
@@ -74,11 +74,13 @@ body {
   background-color: #fff;
   border-radius: 10px;
   opacity: 0.95;
+  -webkit-box-shadow: 2px 4px 29px -4px rgb(154, 154, 167);
+  -moz-box-shadow: 2px 4px 29px -4px rgb(154, 154, 167);
   box-shadow: 2px 4px 29px -4px rgb(154, 154, 167);
   position: relative;
   overflow: hidden;
 }
-@media (max-width: 1024px) {
+@media (max-width: 687px) {
   .card-container {
     height: 536px;
   }
@@ -96,7 +98,7 @@ body {
   gap: 50px;
   transition: all 0.3s ease-in-out;
 }
-@media (max-width: 1024px) {
+@media (max-width: 687px) {
   .create-form,
 .personal-form,
 .social-form {

@@ -10,7 +10,7 @@ body {
   align-items: center;
   font-family: "Merriweather", serif;
   font-weight: 400;
-  @media (max-width: 1024px) {
+  @media (max-width: 687px) {
     background: url(images/bg.jpg) no-repeat center center;
     background-size: cover;
   }
@@ -37,7 +37,7 @@ body {
     transition: all 0.3s ease-in-out;
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
-    @media (max-width: 1024px) {
+    @media (max-width: 687px) {
       width: 130px;
     }
   }
@@ -67,7 +67,7 @@ body {
   box-shadow: 2px 4px 29px -4px rgba(154, 154, 167, 1);
   position: relative;
   overflow: hidden;
-  @media (max-width: 1024px) {
+  @media (max-width: 687px) {
     height: 536px;
   }
 }
@@ -84,7 +84,7 @@ body {
   gap: 50px;
   transition: all 0.3s ease-in-out;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 687px) {
     padding: 150px 38px 38px 38px;
     gap: 30px;
   }
