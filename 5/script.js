@@ -78,11 +78,11 @@ backSocialButton.addEventListener("click", backSocial);
 nextSocialButton.addEventListener("click", nextSocial);
 
 // CREATE VALIDATION
-emailInput.addEventListener("blur", () => {
-  if (emailInput.value !== "" && passwordInput.value !== "" && passwordInputConfirm.value !== "") {
-    nextCreateButton.disabled = false;
-  }
-});
+// emailInput.addEventListener("blur", () => {
+//   if (emailInput.value !== "" && passwordInput.value !== "" && passwordInputConfirm.value !== "") {
+//     nextCreateButton.disabled = false;
+//   }
+// });
 
 emailInput.addEventListener("blur", () => {
   const error = document.querySelector(".error-input-mail");
@@ -95,5 +95,6 @@ emailInput.addEventListener("blur", () => {
     error.hidden = false;
   } else {
     error.hidden = true;
+    nextCreateButton.disabled = false;
   }
 });
