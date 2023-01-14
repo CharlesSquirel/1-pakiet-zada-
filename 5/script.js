@@ -22,7 +22,7 @@ const emailInput = document.querySelector(".input-email");
 const passwordInput = document.querySelector(".input-password");
 const passwordInputConfirm = document.querySelector(".input-password-confirm");
 
-const card = document.querySelector(".card-container");
+const errors = document.querySelectorAll(".create-error");
 
 //FUNCTIONS NEXT/BACK
 const nextCreate = () => {
@@ -88,11 +88,43 @@ emailInput.addEventListener("blur", () => {
   const error = document.querySelector(".error-input-mail");
 
   if (emailInput.value === "") {
-    error.textContent = "Wprowadź email";
+    error.textContent = "Wprowadź email!";
     error.hidden = false;
+    nextCreateButton.disabled = true;
   } else if (emailInput.value.length < 6) {
-    error.textContent = "Wprowadź email więcej niż 6 znaków";
+    error.textContent = "Wprowadź email więcej niż 6 znaków!";
     error.hidden = false;
+    nextCreateButton.disabled = true;
+  }
+});
+
+passwordInput.addEventListener("blur", () => {
+  const error = document.querySelector(".error-input-password");
+  if (passwordInput.value === "") {
+    error.textContent = "Wprowadź hasło!";
+    error.hidden = false;
+    nextCreateButton.disabled = true;
+  } else if (passwordInput.value.length < 6) {
+    error.textContent = "Wprowadź hasło zawierające więcej niż 6 znaków!";
+    error.hidden = false;
+    nextCreateButton.disabled = true;
+  } else if (!/[0-9]/gi.test(passwordInput.value)) {
+    error.textContent = "Wprowadź hasło powinno zawierać co najmniej jedną cyfrę!";
+    error.hidden = false;
+    nextCreateButton.disabled = true;
+  } else if (!/[A-Z]/.test(passwordInput.value)) {
+    error.textContent = "Wprowadź hasło powinno zawierać co najmniej jedną wielką literę!";
+    error.hidden = false;
+    nextCreateButton.disabled = true;
+  }
+});
+
+passwordInputConfirm.addEventListener("blur", () => {
+  const error = document.querySelector(".error-input-password-confirm");
+  if (passwordInputConfirm.value === "") {
+    error.textContent = "Wprowadź potwierdzenie hasła!";
+    error.hidden = false;
+    nextCreateButton.disabled = true;
   } else {
     error.hidden = true;
     nextCreateButton.disabled = false;

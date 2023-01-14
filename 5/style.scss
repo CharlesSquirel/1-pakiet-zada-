@@ -58,8 +58,7 @@ body {
 
 .card-container {
   width: 638px;
-  height: 520px;
-  // height: 612px;
+  height: 612px;
   background-color: $white;
   border-radius: 10px;
   opacity: 0.95;
@@ -68,6 +67,7 @@ body {
   box-shadow: 2px 4px 29px -4px rgba(154, 154, 167, 1);
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease-in-out;
   @media (max-width: 687px) {
     height: 536px;
   }
@@ -148,4 +148,8 @@ body {
 .btns-container {
   display: flex;
   gap: 15px;
+}
+
+.error {
+  color: red;
 }

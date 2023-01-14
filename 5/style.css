@@ -70,7 +70,7 @@ body {
 
 .card-container {
   width: 638px;
-  height: 520px;
+  height: 612px;
   background-color: #fff;
   border-radius: 10px;
   opacity: 0.95;
@@ -79,6 +79,7 @@ body {
   box-shadow: 2px 4px 29px -4px rgb(154, 154, 167);
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 @media (max-width: 687px) {
   .card-container {
@@ -166,4 +167,8 @@ body {
 .btns-container {
   display: flex;
   gap: 15px;
+}
+
+.error {
+  color: red;
 }/*# sourceMappingURL=style.css.map */
