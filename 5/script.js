@@ -22,6 +22,8 @@ const emailInput = document.querySelector(".input-email");
 const passwordInput = document.querySelector(".input-password");
 const passwordInputConfirm = document.querySelector(".input-password-confirm");
 
+const card = document.querySelector(".card-container");
+
 //FUNCTIONS NEXT/BACK
 const nextCreate = () => {
   createForm.style.left = "-580px";
@@ -79,5 +81,19 @@ nextSocialButton.addEventListener("click", nextSocial);
 emailInput.addEventListener("blur", () => {
   if (emailInput.value !== "" && passwordInput.value !== "" && passwordInputConfirm.value !== "") {
     nextCreateButton.disabled = false;
+  }
+});
+
+emailInput.addEventListener("blur", () => {
+  const error = document.querySelector(".error-input-mail");
+
+  if (emailInput.value === "") {
+    error.textContent = "Wprowadź email";
+    error.hidden = false;
+  } else if (emailInput.value.length < 6) {
+    error.textContent = "Wprowadź email więcej niż 6 znaków";
+    error.hidden = false;
+  } else {
+    error.hidden = true;
   }
 });
