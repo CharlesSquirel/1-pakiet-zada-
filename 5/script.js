@@ -18,7 +18,9 @@ const buttonGroup = [].concat(nextCreateButton, backPersonalButton);
 // WATCH MEDIA
 const mobile = window.matchMedia("(max-width: 687px)");
 // INPUTS
-const emailInput = document.querySelector("#email");
+const emailInput = document.querySelector(".input-email");
+const passwordInput = document.querySelector(".input-password");
+const passwordInputConfirm = document.querySelector(".input-password-confirm");
 
 //FUNCTIONS NEXT/BACK
 const nextCreate = () => {
@@ -59,9 +61,9 @@ const nextSocial = () => {
 };
 
 // DISABLED FOR ALL SUBMIT BUTTONS
-// allButtons.forEach((btn) => {
-//   btn.setAttribute("disabled", "");
-// });
+allButtons.forEach((btn) => {
+  btn.disabled = true;
+});
 
 // FORMS EVENTS
 // NEXT CREATE BUTTON EVENT && BACK PERSONAL BUTTON EVENT
@@ -72,3 +74,10 @@ backSocialButton.addEventListener("click", backSocial);
 
 // NEXT SOCIAL BUTTON EVENT
 nextSocialButton.addEventListener("click", nextSocial);
+
+// CREATE VALIDATION
+emailInput.addEventListener("blur", () => {
+  if (emailInput.value !== "" && passwordInput.value !== "" && passwordInputConfirm.value !== "") {
+    nextCreateButton.disabled = false;
+  }
+});
