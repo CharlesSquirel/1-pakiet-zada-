@@ -1,1 +1,85 @@
 @import "_global.scss";
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 100px;
+}
+
+.progress-gray {
+  background-color: rgb(180, 177, 177);
+  width: 100%;
+  min-height: 30px;
+}
+
+.progress {
+  background-color: blue;
+  width: 100px;
+  min-height: 30px;
+  position: relative;
+  bottom: 30px;
+}
+
+.progress-container {
+  width: 100%;
+}
+
+.navigation-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-left: 50px;
+  position: relative;
+}
+
+.btn {
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 34px;
+  cursor: pointer;
+}
+
+.nav-text {
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.circles {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  position: absolute;
+  bottom: 500px;
+  z-index: 1;
+}
+
+.circle {
+  border: 5px solid rgb(180, 177, 177);
+  width: 100px;
+  border-radius: 50%;
+  height: 100px;
+  background-color: white;
+}
+
+.circles-texts {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 450px;
+  gap: 302px;
+  padding-left: 153px;
+}
+
+.circles-texts p {
+  font-size: 32px;
+  font-weight: 500;
+}
