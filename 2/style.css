@@ -26,10 +26,11 @@ body {
 
 .progress {
   background-color: blue;
-  width: 100px;
+  width: 0;
   min-height: 30px;
   position: relative;
   bottom: 30px;
+  transition: all 0.3 ease-in-out;
 }
 
 .progress-container {
